@@ -1,17 +1,11 @@
-var sampleApp = angular.module('core');
+var sampleApp = angular.module('sampleApp');
 
-sampleApp.controller('AddNewUserController', function($scope, $http) {
+sampleApp.controller('NewUserController', ['$scope','DemoService',function($scope,DemoService) {
     hello();
     $scope.message = 'This is Add new order screen';
 	function hello() {
-		$http({method: 'GET', url: 'abcd.html'}).
-			success(function(data, status, headers, config) {
-					alert(data);
-					$scope.hellodata = data;
-			}).
-		error(function(data, status, headers, config) {
-					alert(data)});
+		DemoService.sayHello();
 	};
 	
      
-});
+}]);

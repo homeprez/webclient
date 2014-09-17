@@ -7,11 +7,11 @@ var sampleApp = angular.module('sampleApp', []);
 sampleApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
-      when('/AddNewOrder', {
+      when('/AddNewUser', {
         templateUrl: 'templates/add_order.html',
-        controller: 'AddOrderController'
+        controller: 'NewUserController'
     }).
-      when('/ShowOrders', {
+      when('/ShowUsers', {
         templateUrl: 'templates/show_orders.html',
         controller: 'ShowOrdersController'
       }).
@@ -26,6 +26,6 @@ sampleApp.config(['$routeProvider',
  
 sampleApp.controller('ShowOrdersController', function($scope) {
  
-    $scope.message = 'This is Show orders screen';
+    $scope.users = [{name:'indra'},{name:'anish'},{name:'anand'},{name:'sagar'}];
  
 });
