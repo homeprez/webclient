@@ -46,6 +46,12 @@ sampleApp.config(function($stateProvider,$urlRouterProvider) {
 			url: '/myNotifications',
 			templateUrl: 'templates/MyNotifications.html'
 		})
+		
+		.state('login', {
+			url: '/Login',
+			templateUrl: 'templates/Login.html',
+			controller: 'LoginController'
+		})
 });
  
  
@@ -56,4 +62,10 @@ sampleApp.controller('ShowOrdersController', function($scope) {
  
     $scope.users = [{name:'indra'},{name:'anish'},{name:'anand'},{name:'sagar'}];
  
+});
+
+sampleApp.controller('LoginController', function($scope) {
+	$scope.login = function() {
+		alert('login controller');
+	}
 });
