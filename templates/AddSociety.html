@@ -1,0 +1,34 @@
+<div class="container">
+      <h3>Add Society</h3>
+      <form class="form-horizontal" role="form">
+        <div class="form-group">
+          <label class="control-label col-sm-1" for="email">Name:</label>
+          <div class="col-sm-4">
+            <input type="text" ng-model="name" class="form-control" id="email" placeholder="Name">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-1" for="pwd">Address:</label>
+          <div class="col-sm-4">          
+            <input type="text" ng-model="address" class="form-control" id="pwd" placeholder="Address">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-1" for="pwd">Date of Registration</label>
+          <div class="col-sm-2">          
+            <input type="date" ng-model="date" class="form-control" id="pwd" placeholder="Date">
+          </div>
+        </div>
+		<div class="form-group">
+          <label class="control-label col-sm-1" for="pwd">Registration number</label>
+          <div class="col-sm-4">          
+            <input type="text" ng-model="regNumber" class="form-control" id="pwd" placeholder="Reg. No.">
+          </div>
+        </div>
+        <div class="form-group">        
+          <div class="col-sm-offset-1 col-sm-10">
+            <button type="submit" class="btn btn-default" ng-click="addSociety()" >Submit</button>
+          </div>
+        </div>
+      </form>
+ </div>
