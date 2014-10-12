@@ -1,5 +1,5 @@
 //Define an angular module for our app
-var sampleApp = angular.module('sampleApp', ['ui.router','restangular']);
+var sampleApp = angular.module('sampleApp', ['ui.router','restangular','ui.bootstrap']);
  
 sampleApp.config(function(RestangularProvider) {
 	RestangularProvider.setBaseUrl('/rest');
@@ -85,6 +85,19 @@ sampleApp.config(function($stateProvider,$urlRouterProvider) {
  
  
 
+angular.module('sampleApp').controller('ModalInstanceCtrl', function ($scope, $modalInstance, message) {
+
+  $scope.myMessage = message;
+
+
+  $scope.ok = function () {
+    $modalInstance.close();
+  };
+
+  $scope.cancel = function () {
+    $modalInstance.dismiss('cancel');
+  };
+});
 
  
 sampleApp.controller('ShowOrdersController', function($scope) {
@@ -93,7 +106,7 @@ sampleApp.controller('ShowOrdersController', function($scope) {
  
 });
 
-sampleApp.controller('LoginController', function($scope,Restangular) {
+sampleApp.controller('LoginController', function($scope,$modal,Restangular,DialogService) {
 	$scope.login = function() {
 	var data = {userName: 'anand', password: 'password'};
 		var queryParamObj = { role: 'admin' },
@@ -103,6 +116,10 @@ sampleApp.controller('LoginController', function($scope,Restangular) {
     
 		user.post('',$scope.serialize(data),'',{'Content-Type': "application/x-www-form-urlencoded; charset=UTF-8"});
 		alert(user);
+	}
+	
+	$scope.open = function (size) {
+		DialogService.error('error ala re');
 	}
 	
 	$scope.serialize = function(obj) {

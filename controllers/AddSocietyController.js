@@ -1,6 +1,6 @@
 var sampleApp = angular.module('sampleApp');
 
-sampleApp.controller('AddSocietyController', function($scope,Restangular) {
+sampleApp.controller('AddSocietyController', function($scope,Restangular,$modal,DialogService) {
 	$scope.sayHi = function () {
 		alert('Hi Society controller');
 	}
@@ -17,8 +17,9 @@ sampleApp.controller('AddSocietyController', function($scope,Restangular) {
 		
     
 		user.post('',$scope.serialize(data),'',{'Content-Type': "application/x-www-form-urlencoded; charset=UTF-8"});
-		alert(user);
+		DialogService.error('error ala re');
 	}
+	
 	
 	$scope.serialize = function(obj) {
 	  var str = [];
