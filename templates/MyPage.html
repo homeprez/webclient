@@ -5,14 +5,17 @@
 	  <div class="col-xs-3 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
 			
           <div class="list-group">
-			<a ui-sref=".myBills" class="list-group-item">My Bills</a>
-            <a ui-sref=".myFlats" class="list-group-item">My Flats</a>
-            <a ui-sref=".myNotifications" class="list-group-item">My Notifications</a>
-			<a ui-sref=".addSociety" class="list-group-item">Add Society</a>
+			<a ui-sref=".myBills" ui-sref-active="active" class="list-group-item">My Bills<span class="badge pull-right">3</span></a>
+            <a ui-sref=".myFlats" ui-sref-active="active" class="list-group-item">My Flats</a>
+            <a ui-sref=".myNotifications" ui-sref-active="active" class="list-group-item">My Notifications</a>
+			<a ui-sref=".addSociety" ui-sref-active="active" class="list-group-item">Add Society</a>
+			<a ui-sref=".user" ui-sref-active="active" class="list-group-item">Users</a>
+			<a ui-sref=".editUser" ui-sref-active="active" class="list-group-item">Edit Users</a>
+			<a ui-sref=".events" ui-sref-active="active" class="list-group-item">Events<span class="badge pull-right">42</span></a>
           </div>
         </div><!--/span-->
 		
-        <div class="col-xs-9 col-sm-9">
+        <div class="col-xs-9 col-sm-9"> 
           <div ui-view></div>
         </div><!--/span-->
 

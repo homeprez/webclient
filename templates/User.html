@@ -1,0 +1,23 @@
+<div>
+	<div class="row">
+		<form class="form-inline pull-right" role="form">
+			<div class="form-group">
+			<label class="control-label">Search</label>
+			<input type="text" class="form-control" ng-model="searchUser" placeholder="Search">
+			</div>
+		</form>
+		
+	</div>
+	<div class="row">
+		<table class="table table-hover">
+		<tr ng-repeat="user in users | filter:searchUser">
+			<td>{{user.name}}</td>
+			<td><a ui-sref="myPage.editUser({id:$index})">edit</a></td>
+			<td><a href="" ng-click="delete()">delete</a></td>
+			<td>{{$index}}</td>
+		</tr>		
+	</table>
+	</div>
+    
+	
+</div>

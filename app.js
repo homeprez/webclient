@@ -1,5 +1,5 @@
 //Define an angular module for our app
-var sampleApp = angular.module('sampleApp', ['ui.router','restangular','ui.bootstrap']);
+var sampleApp = angular.module('sampleApp', ['ui.router','restangular','ui.bootstrap','ui.calendar']);
  
 sampleApp.config(function(RestangularProvider) {
 	RestangularProvider.setBaseUrl('/rest');
@@ -50,6 +50,7 @@ sampleApp.config(function($stateProvider,$urlRouterProvider) {
 			templateUrl: 'templates/About.html'
 		})
 		
+
 		.state('myPage', {
 			url: '',
 			templateUrl: 'templates/MyPage.html'
@@ -75,6 +76,31 @@ sampleApp.config(function($stateProvider,$urlRouterProvider) {
 			templateUrl: 'templates/AddSociety.html',
 			controller: 'AddSocietyController'
 		})
+		
+		.state('myPage.user', {
+			url: '/user',
+			templateUrl: 'templates/User.html',
+			controller: 'UserController'
+		})
+		
+		.state('myPage.editUser', {
+			url: '/user/:id/edit',
+			templateUrl: 'templates/UserEdit.html',
+			controller: 'UserController',
+			resolve : 	{
+					UserDemoService : 'UserDemoService',
+					user : function(UserDemoService) {
+						alert(UserDemoService.users[3].name);
+						return UserDemoService.users[2];
+					}
+			}
+		})
+		
+		.state('myPage.events', {
+			url: '/events',
+			templateUrl: 'templates/Events.html'
+		})
+		
 		
 		.state('login', {
 			url: '/Login',
